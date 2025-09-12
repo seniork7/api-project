@@ -1,0 +1,418 @@
+[
+    {
+        "id": 1,
+        "name": "Apple",
+        "category": "Fruits",
+        "price": 0.99,
+        "inStock": true,
+        "image": "apple.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Banana",
+        "category": "Fruits",
+        "price": 0.59,
+        "inStock": true,
+        "image": "banana.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Orange",
+        "category": "Fruits",
+        "price": 1.99,
+        "inStock": false,
+        "image": "orange.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Strawberry",
+        "category": "Fruits",
+        "price": 3.25,
+        "inStock": true,
+        "image": "strawberry.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Grapes",
+        "category": "Fruits",
+        "price": 2.99,
+        "inStock": true,
+        "image": "grape.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Milk",
+        "category": "Diary",
+        "price": 2.45,
+        "inStock": true,
+        "image": "milk.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Cheddar Cheese",
+        "category": "Diary",
+        "price": 3.99,
+        "inStock": true,
+        "image": "cheddar_cheese.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Yogurt",
+        "category": "Diary",
+        "price": 1.79,
+        "inStock": false,
+        "image": "yogurt.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Egg (12pk)",
+        "category": "Diary",
+        "price": 3.49,
+        "inStock": true,
+        "image": "egg.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Butter",
+        "category": "Diary",
+        "price": 2.99,
+        "inStock": true,
+        "image": "butter.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Bread",
+        "category": "Bakery",
+        "price": 3.99,
+        "inStock": true,
+        "image": "bread.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Donuts (12pk)",
+        "category": "Bakery",
+        "price": 4.99,
+        "inStock": true,
+        "image": "donut.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Bagel",
+        "category": "Bakery",
+        "price": 1.99,
+        "inStock": false,
+        "image": "bagel.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Muffin",
+        "category": "Bakery",
+        "price": 2.29,
+        "inStock": true,
+        "image": "muffin.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Carrot",
+        "category": "Vegetables",
+        "price": 0.79,
+        "inStock": true,
+        "image": "carrot.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Broccoli",
+        "category": "Vegetables",
+        "price": 1.99,
+        "inStock": false,
+        "image": "broccoli.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Spinach",
+        "category": "Vegetables",
+        "price": 2.29,
+        "inStock": true,
+        "image": "spinach.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Tomato",
+        "category": "Vegetables",
+        "price": 1.49,
+        "inStock": true,
+        "image": "tomato.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Cucumber",
+        "category": "Vegetables",
+        "price": 0.99,
+        "inStock": true,
+        "image": "cucumber.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Chicken Breast",
+        "category": "Meat",
+        "price": 5.99,
+        "inStock": true,
+        "image": "chicken.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Ground Beef",
+        "category": "Meat",
+        "price": 6.49,
+        "inStock": false,
+        "image": "beef.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Pork Chops",
+        "category": "Meat",
+        "price": 4.99,
+        "inStock": true,
+        "image": "pork.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Salmon Fillet",
+        "category": "Seafood",
+        "price": 9.99,
+        "inStock": true,
+        "image": "salmon.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Shrimp",
+        "category": "Seafood",
+        "price": 12.99,
+        "inStock": false,
+        "image": "shrimp.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Rice (1kg)",
+        "category": "Grains",
+        "price": 2.99,
+        "inStock": true,
+        "image": "rice.jpg"
+    },
+    {
+        "id": 26,
+        "name": "Pasta",
+        "category": "Grains",
+        "price": 1.49,
+        "inStock": true,
+        "image": "pasta.jpg"
+    },
+    {
+        "id": 27,
+        "name": "Quinoa",
+        "category": "Grains",
+        "price": 4.49,
+        "inStock": true,
+        "image": "quinoa.jpg"
+    },
+    {
+        "id": 28,
+        "name": "Olive Oil",
+        "category": "Pantry",
+        "price": 7.99,
+        "inStock": true,
+        "image": "olive_oil.jpg"
+    },
+    {
+        "id": 29,
+        "name": "Canned Beans",
+        "category": "Pantry",
+        "price": 1.29,
+        "inStock": true,
+        "image": "beans.jpg"
+    },
+    {
+        "id": 30,
+        "name": "Tomato Sauce",
+        "category": "Pantry",
+        "price": 2.49,
+        "inStock": false,
+        "image": "tomato_sauce.jpg"
+    },
+    {
+        "id": 31,
+        "name": "Peanut Butter",
+        "category": "Pantry",
+        "price": 3.49,
+        "inStock": true,
+        "image": "peanut_butter.jpg"
+    },
+    {
+        "id": 32,
+        "name": "Almonds",
+        "category": "Pantry",
+        "price": 5.99,
+        "inStock": true,
+        "image": "almonds.jpg"
+    },
+    {
+        "id": 33,
+        "name": "Chocolate Bar",
+        "category": "Snacks",
+        "price": 1.49,
+        "inStock": true,
+        "image": "chocolate.jpg"
+    },
+    {
+        "id": 34,
+        "name": "Potato Chips",
+        "category": "Snacks",
+        "price": 2.49,
+        "inStock": true,
+        "image": "chips.jpg"
+    },
+    {
+        "id": 35,
+        "name": "Granola Bar",
+        "category": "Snacks",
+        "price": 1.29,
+        "inStock": false,
+        "image": "granola.jpg"
+    },
+    {
+        "id": 36,
+        "name": "Soda",
+        "category": "Beverages",
+        "price": 1.99,
+        "inStock": true,
+        "image": "soda.jpg"
+    },
+    {
+        "id": 37,
+        "name": "Orange Juice",
+        "category": "Beverages",
+        "price": 3.49,
+        "inStock": true,
+        "image": "orange_juice.jpg"
+    },
+    {
+        "id": 38,
+        "name": "Coffee Beans",
+        "category": "Beverages",
+        "price": 7.99,
+        "inStock": true,
+        "image": "coffee.jpg"
+    },
+    {
+        "id": 39,
+        "name": "Tea Bags",
+        "category": "Beverages",
+        "price": 2.99,
+        "inStock": true,
+        "image": "tea.jpg"
+    },
+    {
+        "id": 40,
+        "name": "Frozen Pizza",
+        "category": "Frozen Foods",
+        "price": 5.49,
+        "inStock": true,
+        "image": "pizza.jpg"
+    },
+    {
+        "id": 41,
+        "name": "Ice Cream",
+        "category": "Frozen Foods",
+        "price": 4.99,
+        "inStock": false,
+        "image": "ice_cream.jpg"
+    },
+    {
+        "id": 42,
+        "name": "Frozen Vegetables",
+        "category": "Frozen Foods",
+        "price": 2.99,
+        "inStock": true,
+        "image": "frozen_veggies.jpg"
+    },
+    {
+        "id": 43,
+        "name": "Frozen Berries",
+        "category": "Frozen Foods",
+        "price": 3.99,
+        "inStock": true,
+        "image": "frozen_berries.jpg"
+    },
+    {
+        "id": 44,
+        "name": "Cereal",
+        "category": "Breakfast",
+        "price": 3.49,
+        "inStock": true,
+        "image": "cereal.jpg"
+    },
+    {
+        "id": 45,
+        "name": "Oatmeal",
+        "category": "Breakfast",
+        "price": 2.49,
+        "inStock": true,
+        "image": "oatmeal.jpg"
+    },
+    {
+        "id": 46,
+        "name": "Maple Syrup",
+        "category": "Breakfast",
+        "price": 6.49,
+        "inStock": true,
+        "image": "maple_syrup.jpg"
+    },
+    {
+        "id": 47,
+        "name": "Honey",
+        "category": "Breakfast",
+        "price": 5.99,
+        "inStock": true,
+        "image": "honey.jpg"
+    },
+    {
+        "id": 48,
+        "name": "Water (1L)",
+        "category": "Beverages",
+        "price": 0.99,
+        "inStock": true,
+        "image": "water.jpg"
+    },
+    {
+        "id": 49,
+        "name": "Lettuce",
+        "category": "Vegetables",
+        "price": 1.29,
+        "inStock": true,
+        "image": "lettuce.jpg"
+    },
+    {
+        "id": 50,
+        "name": "Bell Pepper",
+        "category": "Vegetables",
+        "price": 1.49,
+        "inStock": true,
+        "image": "bell_pepper.jpg"
+    },
+    {
+        "id": 51,
+        "name": "Cucumber",
+        "category": "Vegetables",
+        "price": 0.99,
+        "inStock": true,
+        "image": "cucumber.jpg"
+    },
+    {
+        "id": 52,
+        "name": "Mushrooms",
+        "category": "Vegetables",
+        "price": 2.99,
+        "inStock": false,
+        "image": "mushrooms.jpg"
+    }
+]
