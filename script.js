@@ -12,7 +12,7 @@ const groceryContainer = document.getElementById('grocery');
 // Use preventDefault() to prevent the form from submitting
 searchBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    init(formElement.value);
+    displayProduct(formElement.value);
 })
 
 // This function fetch the data from the API (JSON file)
@@ -24,7 +24,8 @@ async function fetchData() {
         const data = await response.json();
         return await data;
     } catch (error) {
-        console.error("Could not fetch data:", error.message);
+        groceryContainer.innerHTML = `
+        <p class="capitalize text-gray-500">Could not fetch data: ${error.message}</p>`;
         return [];
     }
 }
@@ -40,7 +41,7 @@ async function displayProduct(searchItem) {
     // If undefined, display a message
     if (foundItem === undefined) {
         groceryContainer.innerHTML = `
-            <p>Item not found.</p>`;
+            <p class="text-gray-200">Item not found.</p>`;
     } else {
         // Else display the item
         groceryContainer.innerHTML = `
