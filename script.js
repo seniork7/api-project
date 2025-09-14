@@ -20,12 +20,15 @@ async function fetchData() {
     // Catch errors if there's any network issues
     try {
         const response = await fetch('products.json');
-        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`)
+        };
         const data = await response.json();
-        return await data;
+        return data;
     } catch (error) {
         groceryContainer.innerHTML = `
-        <p class="capitalize text-gray-500">Could not fetch data: ${error.message}</p>`;
+            <p class="capitalize text-gray-500">Could not fetch data: ${error.message}</p>
+        `;
         return [];
     }
 }
@@ -36,18 +39,79 @@ async function displayProduct(searchItem) {
     const data = await fetchData();
 
     // Search the array for the matching item
-    const foundItem = data.find(item => item.name === searchItem.toLowerCase());
+    const category = data.filter(item => item.category === searchItem.toLowerCase() || item.name === searchItem.toLowerCase());
 
-    // If undefined, display a message
-    if (foundItem === undefined) {
+    // If the search returns undefined or an empty array, display a message
+    if (category.length === 0) {
         groceryContainer.innerHTML = `
-            <p class="text-gray-200">Item not found.</p>`;
-    } else {
-        // Else display the item
-        groceryContainer.innerHTML = `
-            <p class="capitalize text-gray-200">${foundItem.name}</p>
-            <p class="capitalize text-gray-200">${foundItem.inStock}</p>
-            <p class=" text-gray-200">$${foundItem.price}</p>`;
+            <p class="text-gray-200">Item not found.</p>
+        `;
+
+        return;
     }
+
+    // If the item/category is found, display the items
+    category.forEach((item) => {
+        groceryContainer.innerHTML += `
+            <div class="flex flex-col md:flex-row items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://placehold.co/1x1" alt="">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="capitalize text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${item.name}</h5>
+                    <div class="flex flex-wrap justify-center gap-4 md:w-64 leading-normal">
+                        <p class="mb-3 font-normal text-xl text-gray-700 dark:text-green-400">$${item.price}</p>
+                        <p class="capitalize mb-3 font-normal text-xl text-gray-700 dark:text-orange-400">${item.inStock}</p>
+                        <p class="capitalize mb-3 font-normal text-xl text-gray-700 dark:text-blue-400">${item.category}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+// }
+
+// This function enables voice search functionality
+function voiceSearch() {
+    // Get the mic btn
+    const micBtn = document.getElementById("voice-search");
+
+    // Get the SpeechRecognition object
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    // Check if the browser supports the Web Speech API and configure it
+    micBtn.addEventListener("click", () => {
+        if (SpeechRecognition) {
+            // Start a new session of SpeechRecognition
+            const recognition = new SpeechRecognition();
+            // Prevent the recording from stopping automatically
+            recognition.continuous = false;
+            // Set the language to English (US)
+            recognition.lang = "en-US";
+            // Enable live transcription
+            recognition.interimResults = true;
+
+            // Start the speech recognition
+            recognition.start();
+
+            // Get the transcript and display it in the search bar
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                formElement.value = transcript;
+            };
+
+            // Display error message if there's any
+            recognition.onerror = (event) => {
+                groceryContainer.innerHTML = `
+                    <p class="text-gray-900 dark:text-white">Error: ${event.error}.</p>
+                `;
+            };
+        } else {
+            // Display a message if the browser doesn't support the Web Speech API
+            groceryContainer.innerHTML = `
+                <p class="text-gray-900 dark:text-white">Speech Recognition not supported in this browser.</p>
+            `;
+        }
+    });
 }
 
+// Call the voiceSearch function to enable voice search functionality
+voiceSearch();
