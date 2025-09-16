@@ -1,0 +1,30 @@
+@keyframes gradientMove {
+    0% { 
+        stroke: #0D001F;
+    }
+    15% {
+        stroke: #ffea03;
+    }
+    30% { 
+        stroke: #3b82f6;
+    }
+    45% {
+        stroke: #ff1717;
+    }
+    60% { 
+        stroke: #007171;
+    }
+    75% { 
+        stroke: #22c55e;
+    }
+    90% { 
+        stroke: #f97316;
+    }
+    100% { 
+        stroke: #ad0d2d;
+    }
+}
+
+.recording {
+    animation: gradientMove 15s ease infinite;
+}

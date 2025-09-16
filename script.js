@@ -57,7 +57,7 @@ async function displayProduct(searchItem) {
                 <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://placehold.co/1x1" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="capitalize text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${item.name}</h5>
-                    <div class="flex flex-wrap justify-center gap-4 md:w-64 leading-normal">
+                    <div class="flex flex-wrap justify-center gap-4 md:w-72 leading-normal">
                         <p class="mb-3 font-normal text-xl text-gray-700 dark:text-green-400">$${item.price}</p>
                         <p class="capitalize mb-3 font-normal text-xl text-gray-700 dark:text-orange-400">${item.inStock}</p>
                         <p class="capitalize mb-3 font-normal text-xl text-gray-700 dark:text-blue-400">${item.category}</p>
@@ -77,9 +77,15 @@ function voiceSearch() {
     // Get the SpeechRecognition object
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+    // Get the SVG path inside the mic btn
+    const micSVGPath = micBtn.querySelector("path");
+
     // Check if the browser supports the Web Speech API and configure it
     micBtn.addEventListener("click", () => {
         if (SpeechRecognition) {
+            // Add a class to the mic btn when click
+            micSVGPath.classList.add("recording");
+
             // Start a new session of SpeechRecognition
             const recognition = new SpeechRecognition();
             // Prevent the recording from stopping automatically
@@ -103,12 +109,27 @@ function voiceSearch() {
                 groceryContainer.innerHTML = `
                     <p class="text-gray-900 dark:text-white">Error: ${event.error}.</p>
                 `;
+
+                // Remove the recording class if there's an error
+                micSVGPath.classList.remove("recording");
             };
+
+            // Automatically trigger the search button when the user stop speaking
+            recognition.onend = () => {
+                searchBtn.click();
+
+                // Remove the recording class
+                micSVGPath.classList.remove("recording");
+            };
+
         } else {
             // Display a message if the browser doesn't support the Web Speech API
             groceryContainer.innerHTML = `
                 <p class="text-gray-900 dark:text-white">Speech Recognition not supported in this browser.</p>
             `;
+
+            // Remove the recording class if the browser doesn't support the Web Speech API
+            micSVGPath.classList.remove("recording");
         }
     });
 }
