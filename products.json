@@ -4,7 +4,8 @@
         "name": "apple",
         "category": "fruit",
         "price": 0.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "apple.jpg"
     },
     {
         "id": 2,
@@ -37,35 +38,35 @@
     {
         "id": 6,
         "name": "milk",
-        "category": "diary",
+        "category": "dairy",
         "price": 2.45,
         "inStock": "inStock"
     },
     {
         "id": 7,
         "name": "cheddar cheese",
-        "category": "diary",
+        "category": "dairy",
         "price": 3.99,
         "inStock": "inStock"
     },
     {
         "id": 8,
         "name": "yogurt",
-        "category": "diary",
+        "category": "dairy",
         "price": 1.79,
         "inStock": "out of stock"
     },
     {
         "id": 9,
         "name": "egg",
-        "category": "diary",
+        "category": "dairy",
         "price": 3.49,
         "inStock": "inStock"
     },
     {
         "id": 10,
         "name": "butter",
-        "category": "diary",
+        "category": "dairy",
         "price": 2.99,
         "inStock": "inStock"
     },
@@ -221,7 +222,7 @@
         "name": "almonds",
         "category": "pantry",
         "price": 5.99,
-        "inStock": "inStock"
+        "inStock": "out of stock"
     },
     {
         "id": 33,
@@ -284,7 +285,7 @@
         "name": "ice cream",
         "category": "frozen foods",
         "price": 4.99,
-        "inStock": "out of stock"
+        "inStock": "inStock"
     },
     {
         "id": 42,
@@ -330,7 +331,7 @@
     },
     {
         "id": 48,
-        "name": "water (1l)",
+        "name": "water (1L)",
         "category": "beverages",
         "price": 0.99,
         "inStock": "inStock"

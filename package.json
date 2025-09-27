@@ -1,0 +1,33 @@
+{
+  "name": "api-project",
+  "version": "1.0.0",
+  "description": "The goal of this project is to simulate a grocery store API using JSON and JavaScript.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "test-api": "node test.js",
+    "dev": "concurrently \"nodemon server.js\" \"node test.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seni0026/api-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seni0026/api-project/issues"
+  },
+  "homepage": "https://github.com/seni0026/api-project#readme",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  }
+}
