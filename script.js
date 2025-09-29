@@ -15,11 +15,11 @@ searchBtn.addEventListener('click', (event) => {
     displayProduct(formElement.value);
 })
 
-// This function fetch the data from the API (JSON file)
+// This function fetch the data from the API
 async function fetchData() {
     // Catch errors if there's any network issues
     try {
-        const response = await fetch('products.json');
+        const response = await fetch(API_LINK + '/api/products');
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status}`)
         };

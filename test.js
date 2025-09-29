@@ -2,7 +2,7 @@ const axios = require("axios");
 
 async function testAPI() {
     try {
-        const res = await axios.get("http://localhost:4000/api/products?category=fruit");
+        const res = await axios.get(process.env.API_LINK);
         console.log("Data from API:", res.data);
     } catch (err) {
         console.error("Error:", err.message);
