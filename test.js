@@ -3,7 +3,7 @@ import { API_LINK } from "./config.js";
 
 async function testAPI() {
     try {
-        const res = await axios.get(`${API_LINK}/api/products?category=fruit`);
+        const res = await axios.get(`${API_LINK}/api/products?id=16`);
         console.log("Data from API:", res.data);
     } catch (err) {
         console.error("Error:", err.message);

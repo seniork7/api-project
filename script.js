@@ -10,6 +10,8 @@ const groceryContainer = document.getElementById('grocery');
 const micBtn = document.getElementById('voice-search');
 // Get the spinner
 const spinner = document.getElementById('spinner');
+// Wishlist array to store favorite items
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 // Add click event to the search btn
 // Use preventDefault() to prevent the form from submitting
@@ -45,7 +47,7 @@ async function fetchData() {
 
     // Catch errors if there's any network issues
     try {
-        const response = await fetch(API_LINK + '/api/products');
+        const response = await fetch('products.json');
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status}`)
         };
@@ -83,14 +85,19 @@ function renderProducts(products) {
     // If products are found, display them
     products.forEach((item) => {
         groceryContainer.innerHTML += `
-            <div class="flex flex-col md:flex-row items-center bg-gray-400 rounded-lg shadow-sm md:flex-row md:max-w-xl dark:bg-gray-800">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://placehold.co/1x1" alt="">
-                <div class="flex flex-col justify-between items-center p-4 leading-normal w-full">
-                    <h5 class="capitalize text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${item.name}</h5>
-                    <div class="flex flex-wrap justify-center gap-4 md:w-72 leading-normal">
-                        <p class="mb-3 font-normal text-xl text-green-900 dark:text-green-400">$${item.price}</p>
-                        <p class="capitalize mb-3 font-normal text-xl text-orange-900 dark:text-orange-400">${item.inStock}</p>
-                        <p class="capitalize mb-3 font-normal text-xl text-blue-900 dark:text-blue-400">${item.category}</p>
+            <div class="flex flex-col md:flex-row items-center bg-gray-400 rounded-lg shadow-xl w-[18rem] md:w-3/4 md:max-w-md dark:bg-gray-800">
+                <img class="object-cover w-full rounded-t-lg h-30 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="${
+                    item.image ? item.image : 'https://placehold.co/15x15'
+                }" alt="">
+                <div class="flex flex-col justify-center items-center md:items-start p-2 leading-normal">
+                    <div class="grid grid-cols-2 gap-2">
+                        <h5 class="capitalize mb-2 text-lg tracking-tight text-white dark:text-white">${item.name}</h5>
+                        <img class="favorite cursor-pointer" src="${wishlist.some(i => i.name === item.name) ? './images/heart_fill.svg' : './images/heart-outline.svg'}" data-name="${item.name}" alt="Add to favorites">
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 md:w-72 leading-normal">
+                        <p class="mb-3 font-normal text-md text-green-700 dark:text-green-400">$${item.price}</p>
+                        <p class="capitalize mb-3 font-normal text-md text-orange-700 dark:text-orange-400">${item.inStock}</p>
+                        <p class="capitalize mb-3 font-normal text-md text-blue-700 dark:text-blue-400">${item.category}</p>
                     </div>
                 </div>
             </div>
@@ -205,3 +212,33 @@ function voiceSearch() {
             micSVGPath.classList.remove("recording");
         }   
 }
+
+// This function toggles the favorite icon
+groceryContainer.addEventListener('click', async (event) => {
+    const itemName = event.target.dataset.name;
+
+    if (event.target.classList.contains('favorite')) {
+        event.target.src = event.target.src.includes('heart-outline') ? './images/heart_fill.svg' : './images/heart-outline.svg';
+    }
+
+    if(event.target.src.includes('heart-outline')) {
+        if(wishlist.length >= 5) {
+            alert('You can only add 5 items to your wishlist!');
+            event.target.src = './images/heart-outline.svg';
+            return;
+        }
+
+        const data = await fetchData();
+        const item = data.find(item => item.name === itemName);
+
+        wishlist.push(item);
+        
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        event.target.src = './images/heart_fill.svg';
+    } else {
+        wishlist = wishlist.filter(item => item.name !== itemName);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        event.target.src = './images/heart-outline.svg';
+    }
+});
+console.log(wishlist);

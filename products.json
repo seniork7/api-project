@@ -5,210 +5,239 @@
         "category": "fruit",
         "price": 0.99,
         "inStock": "inStock",
-        "image": "apple.jpg"
+        "image": "./images/apple-min.jpg"
     },
     {
         "id": 2,
         "name": "banana",
         "category": "fruit",
         "price": 0.59,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/banana-min.jpg"
     },
     {
         "id": 3,
         "name": "orange",
         "category": "fruit",
         "price": 1.99,
-        "inStock": "out of stock"
+        "inStock": "inStock",
+        "image": "./images/orange-min.jpg"
     },
     {
         "id": 4,
         "name": "strawberry",
         "category": "fruit",
         "price": 3.25,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/strawberry-min.jpg"
     },
     {
         "id": 5,
         "name": "grape",
         "category": "fruit",
         "price": 2.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/grape-min.jpg"
     },
     {
         "id": 6,
         "name": "milk",
         "category": "dairy",
         "price": 2.45,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/milk-min.jpg"
     },
     {
         "id": 7,
         "name": "cheddar cheese",
         "category": "dairy",
         "price": 3.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/cheddar_cheese-min.jpg"
     },
     {
         "id": 8,
         "name": "yogurt",
         "category": "dairy",
         "price": 1.79,
-        "inStock": "out of stock"
+        "inStock": "inStock",
+        "image": "./images/yogurt-min.jpg"
     },
     {
         "id": 9,
         "name": "egg",
         "category": "dairy",
         "price": 3.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/egg-min.jpg"
     },
     {
         "id": 10,
         "name": "butter",
         "category": "dairy",
         "price": 2.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/butter-min.jpg"
     },
     {
         "id": 11,
         "name": "bread",
         "category": "bakery",
         "price": 3.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/bread-min.jpg"
     },
     {
         "id": 12,
         "name": "donut",
         "category": "bakery",
         "price": 4.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/donut-min.jpg"
     },
     {
         "id": 13,
         "name": "bagel",
         "category": "bakery",
         "price": 1.99,
-        "inStock": "out of stock"
+        "inStock": "inStock",
+        "image": "./images/bagel-min.jpg"
     },
     {
         "id": 14,
         "name": "muffin",
         "category": "bakery",
         "price": 2.29,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/muffin-min.jpg"
     },
     {
         "id": 15,
         "name": "carrot",
         "category": "vegetable",
         "price": 0.79,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/carrot-min.jpg"
     },
     {
         "id": 16,
         "name": "broccoli",
         "category": "vegetable",
         "price": 1.99,
-        "inStock": "out of stock"
+        "inStock": "inStock",
+        "image": "./images/broccoli-min.jpg"
     },
     {
         "id": 17,
         "name": "spinach",
         "category": "vegetable",
         "price": 2.29,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/spinach-min.jpg"
     },
     {
         "id": 18,
         "name": "tomato",
         "category": "vegetable",
         "price": 1.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/tomato-min.jpg"
     },
     {
         "id": 19,
         "name": "cucumber",
         "category": "vegetable",
         "price": 0.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/cucumber-min.jpg"
     },
     {
         "id": 20,
         "name": "chicken breast",
         "category": "meat",
         "price": 5.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/chicken_breast-min.jpg"
     },
     {
         "id": 21,
         "name": "ground beef",
         "category": "meat",
         "price": 6.49,
-        "inStock": "out of stock"
+        "inStock": "inStock",
+        "image": "./images/ground_beef-min.jpg"
     },
     {
         "id": 22,
         "name": "pork chops",
         "category": "meat",
         "price": 4.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/pork_chops-min.jpg"
     },
     {
         "id": 23,
-        "name": "salmon fillet",
+        "name": "lobster",
         "category": "seafood",
         "price": 9.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/lobster-min.jpg"
     },
     {
         "id": 24,
         "name": "shrimp",
         "category": "seafood",
         "price": 12.99,
-        "inStock": "out of stock"
+        "inStock": "inStock",
+        "image": "./images/shrimp-min.jpg"
     },
     {
         "id": 25,
         "name": "rice",
         "category": "grains",
         "price": 2.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/rice-min.jpg"
     },
     {
         "id": 26,
         "name": "pasta",
         "category": "grains",
         "price": 1.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/pasta-min.jpg"
     },
     {
         "id": 27,
         "name": "quinoa",
         "category": "grains",
         "price": 4.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/quinoa-min.jpg"
     },
     {
         "id": 28,
         "name": "olive oil",
         "category": "pantry",
         "price": 7.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/olive_oil-min.jpg"
     },
     {
         "id": 29,
         "name": "canned beans",
         "category": "pantry",
         "price": 1.29,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "canned_beans-min.jpg"
     },
     {
         "id": 30,
         "name": "tomato sauce",
         "category": "pantry",
         "price": 2.49,
-        "inStock": "out of stock"
+        "inStock": "inStock",
+        "image": "./images/tomato_sauce-min.jpg"
     },
     {
         "id": 31,
@@ -222,7 +251,7 @@
         "name": "almonds",
         "category": "pantry",
         "price": 5.99,
-        "inStock": "out of stock"
+        "inStock": "inStock"
     },
     {
         "id": 33,
@@ -243,7 +272,7 @@
         "name": "granola bar",
         "category": "snacks",
         "price": 1.29,
-        "inStock": "out of stock"
+        "inStock": "inStock"
     },
     {
         "id": 36,
@@ -362,7 +391,7 @@
         "name": "mushrooms",
         "category": "vegetable",
         "price": 2.99,
-        "inStock": "out of stock"
+        "inStock": "inStock"
     },
     {
         "id": 53,
@@ -404,7 +433,7 @@
         "name": "cookies",
         "category": "bakery",
         "price": 1.49,
-        "inStock": "out of stock"
+        "inStock": "inStock"
     },
     {
         "id": 59,
