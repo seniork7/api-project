@@ -48,6 +48,7 @@ table {
 }
 
 /* Custom Styles */
+/* Create a gradient animation for the microphone button */
 @keyframes gradientMove {
     0% { 
         stroke: #0D001F;

@@ -7,6 +7,8 @@ const cors = require('cors');
 const fs = require('fs');
 // Import products data from JSON file
 const products = require('./products.json');
+// Import path module to handle file paths
+const path = require('path');
 // Import and configure dotenv to manage environment variables
 require('dotenv').config();
 
@@ -19,18 +21,26 @@ app.use(cors());
 // Parse incoming JSON requests
 app.use(express.json());
 
+// Serve static files from the 'images' directory
+app.use(express.static(path.join(__dirname, 'images')));
+
+// Serve the API documentation
 app.get('/', (req, res) => {
-    res.send('Welcome to the AllMart Grocery Store API!');
+    res.sendFile(path.join(__dirname, './api-docs.html'));
 });
 
 // Get products
 app.get('/api/products', (req, res) => {
     // Get destructure query parameters
-    const { category, name } = req.query;
+    const { category, name, id } = req.query;
 
     /* Filter products based on query parameters*/
     // Get all products
     let data = products;
+
+    if (id) {
+        data = data.filter(p => p.id === parseInt(id, 10));
+    }
 
     // Filter by category
     if (category) {
@@ -40,7 +50,7 @@ app.get('/api/products', (req, res) => {
     // Filter by name
     if (name) {
         data = data.filter(p => p.name.toLowerCase() === name.toLowerCase());
-    }
+    }  
 
     // Check if data array has products
     if (data.length > 0) {

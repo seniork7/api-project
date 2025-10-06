@@ -1,8 +1,9 @@
-const axios = require("axios");
+import axios from 'axios';
+import { API_LINK } from "./config.js";
 
 async function testAPI() {
     try {
-        const res = await axios.get(process.env.API_LINK);
+        const res = await axios.get(`${API_LINK}/api/products?category=fruit`);
         console.log("Data from API:", res.data);
     } catch (err) {
         console.error("Error:", err.message);

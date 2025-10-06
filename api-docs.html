@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllMart Groceries</title>
+
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <!-- Tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flowbite CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-[#1e1e1e] dark:text-gray-200">
+    <div class="max-w-5xl mx-auto p-5">
+        <h1 class="text-2xl md:text-5xl 4xl font-bold mb-5">AllMart Grocery Store API</h1>
+        <hr>
+
+        <p class="my-5 md:w-1/2">Welcome to the AllMart Grocery Store API! This API allows you to fetch, filter, and interact with grocery product data. Below are the available endpoints and examples of how to use them.</p>
+
+        <h2 class="text-2xl font-semibold mt-5">Endpoints</h2>
+        <ul class="list-disc ml-5">
+            <li><strong>GET /api/products</strong> - Fetch all products</li>
+            <li><strong>GET /api/products?category=fruit</strong> - Filter products by category</li>
+            <li><strong>GET /api/products?name=apple</strong> - Filter products by name</li>
+            <li><strong>GET /api/products?id=1</strong> - Fetch a product by its unique ID</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mt-5">Query Parameters</h2>
+        <ul class="list-disc ml-5">
+            <li><strong>category</strong> - Filter products by category (e.g., <code>?category=fruit</code>)</li>
+            <li><strong>name</strong> - Filter products by name (e.g., <code>?name=apple</code>)</li>
+            <li><strong>id</strong> - Filter products by ID (e.g., <code>?id=1</code>)</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold my-5">Example API Call</h2>
+        
+        <img class="h-auto max-w-xs md:max-w-lg rounded-lg" src="/api-call1.png" alt="Screenshot of an API call">
+
+        <p class="my-5">This example fetches all products in the "fruit" category.</p>
+
+        <h2 class="text-2xl font-semibold mt-5 my-5">Response Example</h2>
+        <img class="h-auto max-w-xs md:max-w-lg rounded-lg" src="/data-from-api.png" alt="Screenshot of response from API">
+        <p class="my-5">This is an example of the JSON response you can expect from the API when fetching products.</p>
+            
+
+        <h2 class="text-2xl font-semibold mt-5">Testing the API</h2>
+        <p class="mb-5">You can test the API using tools like Postman, or by running the following script with Node.js:</p>
+        <img class="h-auto max-w-xs md:max-w-lg rounded-lg" src="/testing.png" alt="Screenshot of testing the API">
+        <p class="my-5">This is an example of how to test the API using Node.js and Axios.</p>
+
+        <h2 class="text-2xl font-semibold mt-5">Notes</h2>
+        <ul class="list-disc ml-5 mb-10">
+            <li>Ensure you use the correct query parameters for filtering.</li>
+            <li>All endpoints return JSON responses.</li>
+            <li>If no products are found, the API will return a 404 error with an appropriate message.</li>
+        </ul>
+        <hr>
+    </div>
+    <footer class="p-5">
+        <div class="max-w-5xl mx-auto text-center text-sm text-gray-800 dark:text-gray-200">
+            &copy; 2025 AllMart Grocery Store API. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

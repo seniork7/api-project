@@ -17,21 +17,21 @@
     <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet">
 
-</head>
-<body class="bg-white dark:bg-red-900 min-h-screen">
-    <!-- Dark Mode Icon -->
-    <span class="material-symbols-outlined text-white flex justify-end mr-20 mt-10 cursor-pointer" id="dark-mode"></span>
 
+</head>
+<body class="bg-white dark:bg-[#1e1e1e] min-h-screen">
     <div class="flex flex-col items-center justify-center">
         <!-- Heading Text -->
-<h1 class="text-2xl md:text-5xl p-5 md:p-10 text-gray-900 dark:text-white">
-    Find your faves at <span>AllMart</span>
-</h1>
+        <h1 class="text-2xl md:text-5xl p-5 md:p-10 text-gray-900 dark:text-white">
+            Find your faves at <span>AllMart</span>
+        </h1>
 
         <div class="w-3/4">
             <!-- Search Bar -->
             <form class="flex flex-col md:flex-row justify-center max-w-xl mx-auto">
-                <label for="location-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
+                <label for="default-search">
+                    <span class="sr-only">Search</span>
+                </label>
 
                 <div class="flex items-center w-full mb-2 md:mb-0">
                     <select id="categories" class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-s-lg dark:bg-gray-700 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600 w-[140px]">
@@ -48,8 +48,8 @@
                     
                     <div class="relative w-full">
                         <input type="search" id="default-search" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search AllMart..."/>
-                        <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3">
-                            <svg id="voice-search" class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
+                        <button type="button" id="voice-search" class="absolute inset-y-0 end-0 flex items-center pe-3">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7v3a5.006 5.006 0 0 1-5 5H6a5.006 5.006 0 0 1-5-5V7m7 9v3m-3 0h6M7 1h2a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3Z"/>
                             </svg>
                         </button>
@@ -62,17 +62,28 @@
             </form>
         </div>
 
+        <!-- Spinners -->
+        <div id="spinner" class="flex justify-center items-center mt-20 hidden">
+            <div role="status">
+                <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08197 50.5908C9.08197 73.4057 27.1851 91.5089 50 91.5089C72.8149 91.5089 90.918 73.4057 90.918 50.5908C90.918 27.7759 72.8149 9.67274 50 9.67274C27.1851 9.67274 9.08197 27.7759 9.08197 50.5908Z" fill="currentColor"/>
+                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5538C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7236 75.2124 7.41289C69.5422 4.10218 63.2754 1.94025 56.7226 1.05199C51.7666 0.367006 46.7343 0.44618 41.8197 1.27873C39.3939 1.69443 37.9245 4.19778 38.779 6.55556C39.6335 8.91333 42.1156 10.296 44.5308 9.93958C48.7319 9.32741 52.987 9.29921 57.1509 9.86197C62.7312 10.5732 68.0906 12.3455 72.9057 15.0789C77.7209 17.8124 81.8893 21.455 85.1772 25.7786C87.6067 28.9118 89.6202 32.3452 91.1713 35.955C92.0837 38.246 91.5429 40.6781 93.9676 39.0409Z" fill="currentFill"/>
+                </svg>
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
         <!-- Display Groceries -->
-        <div id="grocery" class="flex flex-wrap justify-center flex-col md:flex-row items-center gap-5 m-10"></div>
+        <div id="grocery" class="flex flex-wrap justify-center flex-col md:flex-row items-center gap-5 m-10 text-xl text-gray-900 dark:text-white"></div>
     </div>
 
     <!-- Flowbite JS -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
     <!-- Config File -->
-    <script src="config.js"></script>
+    <script type="module" src="config.js"></script>
 
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
