@@ -85,16 +85,16 @@ function renderProducts(products) {
     // If products are found, display them
     products.forEach((item) => {
         groceryContainer.innerHTML += `
-            <div class="flex flex-col md:flex-row items-center bg-gray-400 rounded-lg shadow-xl w-[18rem] md:w-3/4 md:max-w-md dark:bg-gray-800">
-                <img class="object-cover w-full rounded-t-lg h-30 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="${
-                    item.image ? item.image : 'https://placehold.co/15x15'
+            <div class="flex flex-col md:flex-row items-start  bg-gray-400 rounded-lg shadow-xl w-[18rem] md:w-[27rem] dark:bg-gray-800">
+                <img class="object-cover w-full rounded-t-lg h-full md:h-[6rem] md:w-[8rem] md:rounded-none md:rounded-s-lg" src="${
+                    item.image ? item.image : 'https://placehold.co/1x1'
                 }" alt="">
-                <div class="flex flex-col justify-center items-center md:items-start p-2 leading-normal">
+                <div class="flex flex-col justify-center items-start md:items-start p-2 leading-normal">
                     <div class="grid grid-cols-2 gap-2">
                         <h5 class="capitalize mb-2 text-lg tracking-tight text-white dark:text-white">${item.name}</h5>
                         <img class="favorite cursor-pointer" src="${wishlist.some(i => i.name === item.name) ? './images/heart_fill.svg' : './images/heart-outline.svg'}" data-name="${item.name}" alt="Add to favorites">
                     </div>
-                    <div class="flex flex-wrap items-center gap-2 md:w-72 leading-normal">
+                    <div class="flex flex-wrap items-center gap-2 md:w-[17rem] leading-normal">
                         <p class="mb-3 font-normal text-md text-green-700 dark:text-green-400">$${item.price}</p>
                         <p class="capitalize mb-3 font-normal text-md text-orange-700 dark:text-orange-400">${item.inStock}</p>
                         <p class="capitalize mb-3 font-normal text-md text-blue-700 dark:text-blue-400">${item.category}</p>
@@ -121,10 +121,23 @@ async function filterCategories() {
 
         // Filter the data based on the selected value
         // Convert the selected value to lowercase to match the category values in the JSON file
-        const category = data.filter(item => item.category.includes(selectedCategory.toLowerCase()));
+        if(selectedCategory === 'wishlist') {
+            // check if the wishlist is empty
+            if (wishlist.length === 0) {
+                groceryContainer.innerHTML = '';
 
-        // Display the selected category
-        renderProducts(category);
+                return;
+            } else {
+                // If the wishlist is not empty, display the wishlist items
+                renderProducts(wishlist);
+            }
+        } else {
+            // If a product category is selected, filter the products by category
+            const category = data.filter(item => item.category.includes(selectedCategory.toLowerCase()));
+            
+            // Display the filtered products
+            renderProducts(category);
+        } 
 
         // Reset the filter field
         setTimeout(() => {
@@ -213,32 +226,59 @@ function voiceSearch() {
         }   
 }
 
-// This function toggles the favorite icon
+// Make the favorite icon clickable using event delegation
 groceryContainer.addEventListener('click', async (event) => {
-    const itemName = event.target.dataset.name;
-
+    // Check if the clicked element is a favorite icon
     if (event.target.classList.contains('favorite')) {
-        event.target.src = event.target.src.includes('heart-outline') ? './images/heart_fill.svg' : './images/heart-outline.svg';
-    }
+        // Get the item name from the event data attribute
+        const itemName = event.target.dataset.name;
 
-    if(event.target.src.includes('heart-outline')) {
-        if(wishlist.length >= 5) {
-            alert('You can only add 5 items to your wishlist!');
+        // Toggle the favorite icon and update the wishlist
+        if (event.target.src.includes('heart-outline')) {
+            // Limit the wishlist to 5 items
+            if (wishlist.length >= 5) {
+                alert('You can only add 5 items to your wishlist!');
+                return;
+            }
+
+            // Prevent adding the same items to the wishlist
+            if (wishlist.some(item => item.name === itemName)) {
+                alert('Item already in wishlist!');
+                return;
+            }
+
+            // Get the data
+            const data = await fetchData();
+            // Find the item in the data
+            const item = data.find(item => item.name === itemName);
+
+            // Add the item to the wishlist
+            wishlist.push(item);
+
+            // Save the wishlist to local storage
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            // Change the icon to filled heart
+            event.target.src = './images/heart_fill.svg';
+        } else {
+            // Filter the wishlist by removing the item
+            wishlist = wishlist.filter(item => item.name !== itemName);
+            // Save the updated wishlist to local storage
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            // Change the icon
             event.target.src = './images/heart-outline.svg';
-            return;
         }
-
-        const data = await fetchData();
-        const item = data.find(item => item.name === itemName);
-
-        wishlist.push(item);
-        
-        localStorage.setItem('wishlist', JSON.stringify(wishlist));
-        event.target.src = './images/heart_fill.svg';
-    } else {
-        wishlist = wishlist.filter(item => item.name !== itemName);
-        localStorage.setItem('wishlist', JSON.stringify(wishlist));
-        event.target.src = './images/heart-outline.svg';
     }
 });
-console.log(wishlist);
+
+// Display user wishlist on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Render the wishlist items
+    if (wishlist.length > 0) {
+        renderProducts(wishlist);
+    } else {
+        // Display a message if the wishlist is empty
+        groceryContainer.innerHTML = '';
+    }
+});

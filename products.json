@@ -229,7 +229,7 @@
         "category": "pantry",
         "price": 1.29,
         "inStock": "inStock",
-        "image": "canned_beans-min.jpg"
+        "image": "./images/canned_beans-min.jpg"
     },
     {
         "id": 30,
@@ -244,209 +244,239 @@
         "name": "peanut butter",
         "category": "pantry",
         "price": 3.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/peanut_butter-min.jpg"
     },
     {
         "id": 32,
         "name": "almonds",
         "category": "pantry",
         "price": 5.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/almonds-min.jpg"
     },
     {
         "id": 33,
         "name": "chocolate bar",
         "category": "snacks",
         "price": 1.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/chocolate_bar-min.jpg"
     },
     {
         "id": 34,
         "name": "potato chips",
         "category": "snacks",
         "price": 2.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/potato_chips-min.jpg"
     },
     {
         "id": 35,
         "name": "granola bar",
         "category": "snacks",
         "price": 1.29,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/granola_bar-min.jpg"
     },
     {
         "id": 36,
-        "name": "soda",
+        "name": "coca cola",
         "category": "beverages",
         "price": 1.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/coca_cola-min.jpg"
     },
     {
         "id": 37,
         "name": "orange juice",
         "category": "beverages",
         "price": 3.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/orange_juice-min.jpg"
     },
     {
         "id": 38,
         "name": "monster energy drink",
         "category": "beverages",
         "price": 7.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/monster_energy_drink-min.jpg"
     },
     {
         "id": 39,
         "name": "tea bags",
         "category": "beverages",
         "price": 2.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/tea_bags-min.jpg"
     },
     {
         "id": 40,
         "name": "frozen pizza",
         "category": "frozen foods",
         "price": 5.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/frozen_pizza-min.jpg"
     },
     {
         "id": 41,
         "name": "ice cream",
         "category": "frozen foods",
         "price": 4.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/ice_cream-min.jpg"
     },
     {
         "id": 42,
         "name": "frozen vegetable",
         "category": "frozen foods",
         "price": 2.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/frozen_vegetable-min.jpg"
     },
     {
         "id": 43,
         "name": "frozen berries",
         "category": "frozen foods",
         "price": 3.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/frozen_berries-min.jpg"
     },
     {
         "id": 44,
         "name": "cereal",
         "category": "breakfast",
         "price": 3.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/cereal-min.jpg"
     },
     {
         "id": 45,
-        "name": "oatmeal",
+        "name": "oats",
         "category": "breakfast",
         "price": 2.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/oats-min.jpg"
     },
     {
         "id": 46,
         "name": "maple syrup",
         "category": "breakfast",
         "price": 6.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/maple_syrup-min.jpg"
     },
     {
         "id": 47,
         "name": "honey",
         "category": "breakfast",
         "price": 5.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/honey-min.jpg"
     },
     {
         "id": 48,
-        "name": "water (1L)",
+        "name": "water",
         "category": "beverages",
         "price": 0.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/water-min.jpg"
     },
     {
         "id": 49,
         "name": "lettuce",
         "category": "vegetable",
         "price": 1.29,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/lettuce-min.jpg"
     },
     {
         "id": 50,
         "name": "bell pepper",
         "category": "vegetable",
         "price": 1.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/bell_pepper-min.jpg"
     },
     {
         "id": 51,
         "name": "cucumber",
         "category": "vegetable",
         "price": 0.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/cucumber-min.jpg"
     },
     {
         "id": 52,
         "name": "mushrooms",
         "category": "vegetable",
         "price": 2.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/mushrooms-min.jpg"
     },
     {
         "id": 53,
         "name": "pepsi",
         "category": "beverages",
         "price": 4.79,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/pepsi-min.jpg"
     },
     {
         "id": 54,
         "name": "flour",
         "category": "baking",
         "price": 3.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/flour-min.jpg"
     },
     {
         "id": 55,
         "name": "table salt",
         "category": "baking",
         "price": 2.79,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/table_salt-min.jpg"
     },
     {
         "id": 56,
         "name": "sugar",
         "category": "baking",
         "price": 2.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/sugar-min.jpg"
     },
     {
         "id": 57,
         "name": "baking powder",
         "category": "baking",
         "price": 1.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/baking_powder-min.jpg"
     },
     {
         "id": 58,
         "name": "cookies",
         "category": "bakery",
         "price": 1.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/cookies-min.jpg"
     },
     {
         "id": 59,
         "name": "salmon",
         "category": "seafood",
         "price": 10.99,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/salmon-min.jpg"
     },
     {
         "id": 60,
         "name": "tuna",
         "category": "seafood",
         "price": 8.49,
-        "inStock": "inStock"
+        "inStock": "inStock",
+        "image": "./images/tuna-min.jpg"
     }
 ]
