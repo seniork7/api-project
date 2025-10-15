@@ -34,8 +34,10 @@ searchBtn.addEventListener('click', (event) => {
 
 // Call filterCategories() display products based on category selected
 filterCategories();
-// Call the voiceSearch function to enable voice search functionality
+// Call voiceSearch() to enable voice search functionality
 voiceSearch();
+// Call displayWishlist() to display the wishlist when the page loads
+displayWishlist(wishlist)
 
 // This function fetch the data from the API
 async function fetchData() {
@@ -252,6 +254,9 @@ groceryContainer.addEventListener('click', async (event) => {
             // Find the item in the data
             const item = data.find(item => item.name === itemName);
 
+            // Show an alert when an item is added to the wishlist
+            alert(`${itemName} added to wishlist!`);
+
             // Add the item to the wishlist
             wishlist.push(item);
 
@@ -263,22 +268,29 @@ groceryContainer.addEventListener('click', async (event) => {
         } else {
             // Filter the wishlist by removing the item
             wishlist = wishlist.filter(item => item.name !== itemName);
+
             // Save the updated wishlist to local storage
             localStorage.setItem('wishlist', JSON.stringify(wishlist));
 
             // Change the icon
             event.target.src = './images/heart-outline.svg';
+
+            // Show the updated wishlist
+            displayWishlist(wishlist);
+
+            // Show an alert when an item is removed from the wishlist
+            alert(`${itemName} removed from wishlist!`);
         }
     }
 });
 
-// Display user wishlist on page load
-document.addEventListener('DOMContentLoaded', () => {
+// This function displays the wishlist 
+function displayWishlist(wishlist) {
     // Render the wishlist items
     if (wishlist.length > 0) {
         renderProducts(wishlist);
     } else {
         // Display a message if the wishlist is empty
-        groceryContainer.innerHTML = '';
+        groceryContainer.innerHTML = 'No items in your wishlist to display.';
     }
-});
+}
